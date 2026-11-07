@@ -1,0 +1,6 @@
+chave,alternativa,renovavel,kwh_chuveiro_rede_ano,geracao_fv_ano,kwh_evitados_ano,conta_anual,economia_anual,investimento,invest_por_kwh_ano,payback_anos,vpl_10a,co2_evitado_kg_ano,reducao_ponta_kw,kwp
+atual,Chuveiro elétrico (situação atual),False,1029.3,0.0,0.0,1783.03,0.0,0.0,,0.0,0.0,0.0,0.0,
+habitos,Banhos de 5 min (mudança de hábito),False,643.3,0.0,386.0,1280.98,502.05,20.0,0.05,0.0,3064.85,14.9,0.0,
+aquecedor_solar,Aquecedor solar de água + chuveiro de apoio,True,308.6,0.0,720.7,958.8,724.23,4199.46,5.83,5.8,250.62,27.7,3.7,
+fotovoltaico,Placas solares fotovoltaicas,True,1029.3,1405.6,1405.6,489.59,1193.44,4950.0,3.52,4.1,2383.18,54.1,0.0,1.1
+combinado,Aquecedor solar + banhos de 5 min,True,192.9,0.0,836.4,847.38,835.65,4219.46,5.04,5.0,915.23,32.2,3.7,

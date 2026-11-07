@@ -1,0 +1,13 @@
+cenario,habitos_economia,solar_economia,solar_payback,fv_economia,fv_payback,combinado_economia,combinado_payback
+Cenário base,502.05,724.23,5.8,1193.44,4.1,835.65,5.0
+Fração solar baixa (50%),502.05,526.01,8.0,1193.44,4.1,711.76,5.9
+Fração solar alta (80%),502.05,823.34,5.1,1193.44,4.1,897.59,4.7
+Aquecedor 2x mais caro (casa precisa de obra),502.05,724.23,11.6,1193.44,4.1,835.65,10.1
+"Fio B baixo (R$ 0,095/kWh)",502.05,724.23,5.8,1254.47,3.9,835.65,5.0
+"Fio B alto (R$ 0,25/kWh)",502.05,724.23,5.8,1082.48,4.6,835.65,5.0
+"FV mais barato (R$ 3,62/Wp)",502.05,724.23,5.8,1193.44,3.3,835.65,5.0
+"FV pequeno mais caro (R$ 6,50/Wp)",502.05,724.23,5.8,1193.44,6.0,835.65,5.0
+Fio B não compensado a 90% (regra de 2028),502.05,724.23,5.8,1110.22,4.5,835.65,5.0
+Bandeira amarela o ano todo,514.03,743.91,5.6,1228.3,4.0,857.99,4.9
+Família SEM Tarifa Social,575.0,797.19,5.3,1193.44,4.1,908.61,4.6
+Banhos de 12 min (família gasta mais),1036.6,1110.23,3.8,1840.16,4.0,1370.2,3.1

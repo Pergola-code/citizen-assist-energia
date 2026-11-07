@@ -1,0 +1,80 @@
+{
+  "_sobre": "Parâmetros usados nos cálculos. Cada item indica valor, unidade, tipo (PUBLICO = dado oficial/público verificado; MERCADO = preço de referência de mercado; ESTIMADO = premissa da equipe, justificada) e a referência (id em referencias.json). Data de consulta das fontes: novembro/2026.",
+  "periodo_referencia": "12 meses (ano típico), tarifas vigentes em nov/2026",
+
+  "tarifa": {
+    "tarifa_b1_sem_impostos": {"valor": 0.78938, "unidade": "R$/kWh", "tipo": "PUBLICO", "ref": "R01",
+      "nota": "Enel SP, B1 residencial convencional (TUSD 0,47242 + TE 0,31696), REH ANEEL nº 3.596/2026, vigente 04/07/2026 a 03/07/2027, bandeira verde."},
+    "bandeira_amarela_adicional": {"valor": 0.01885, "unidade": "R$/kWh", "tipo": "PUBLICO", "ref": "R03",
+      "nota": "R$ 1,885 a cada 100 kWh. Usado só na análise de sensibilidade. Nov/2026 = bandeira verde (R02)."},
+    "icms_faixas_sp": {"valor": [[90, 0.00], [200, 0.12], [999999, 0.18]], "unidade": "[limite kWh/mês, alíquota]", "tipo": "PUBLICO", "ref": "R05",
+      "nota": "SP residencial: isento até 90 kWh; 12% de 91 a 200 kWh; 18% acima de 200 kWh (teto da LC 194/2022). A faixa vale para a conta inteira."},
+    "pis_cofins_efetivo": {"valor": 0.06, "unidade": "fração", "tipo": "ESTIMADO", "ref": "R04",
+      "nota": "PIS/COFINS variam mês a mês por distribuidora; 6% é a média usada em simulações públicas da tarifa Enel SP. Confira na sua conta."},
+    "tarifa_social_kwh_gratuitos": {"valor": 80, "unidade": "kWh/mês", "tipo": "PUBLICO", "ref": "R06",
+      "nota": "Lei 15.235/2025: 100% de desconto até 80 kWh/mês para famílias do CadÚnico com renda per capita até 1/2 salário mínimo. O excedente é cobrado normalmente."},
+    "custo_disponibilidade_monofasico": {"valor": 30, "unidade": "kWh/mês", "tipo": "PUBLICO", "ref": "R07",
+      "nota": "Mínimo faturável de ligação monofásica (bifásica 50, trifásica 100)."}
+  },
+
+  "familia_referencia": {
+    "pessoas": {"valor": 4, "unidade": "pessoas", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Família típica do público-alvo. O simulador aceita qualquer valor."},
+    "banhos_por_pessoa_dia": {"valor": 1, "unidade": "banho/dia", "tipo": "ESTIMADO", "ref": null, "nota": ""},
+    "minutos_por_banho": {"valor": 8, "unidade": "min", "tipo": "ESTIMADO", "ref": "R10",
+      "nota": "Mesmo valor (banho diário de 8 min) usado em estudo de simulação de chuveiros no Sudeste."},
+    "vazao_chuveiro": {"valor": 4.0, "unidade": "L/min", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Chuveiros elétricos de baixa pressão operam tipicamente entre 3 e 5 L/min."},
+    "temperatura_banho": {"valor": 38, "unidade": "°C", "tipo": "ESTIMADO", "ref": null, "nota": "Temperatura de conforto usual."},
+    "temperatura_agua_fria": {"valor": 20, "unidade": "°C", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Média anual aproximada da água da rede na Grande SP (acompanha a temperatura média do ar). No inverno é menor, no verão maior."},
+    "eficiencia_chuveiro": {"valor": 0.95, "unidade": "fração", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Resistência imersa transfere quase todo o calor à água; perdas pequenas."},
+    "consumo_total_mensal": {"valor": 220, "unidade": "kWh/mês", "tipo": "ESTIMADO", "ref": "R09",
+      "nota": "Consumo total da casa. Com o chuveiro calculado (~80 kWh) ele fica em ~37% do total, coerente com a PPH (24% Sudeste em média; maior em casas de baixa renda, onde há menos outros aparelhos)."},
+    "beneficiaria_tarifa_social": {"valor": true, "unidade": "bool", "tipo": "ESTIMADO", "ref": "R06", "nota": "Cenário base. O cenário sem benefício também é calculado."}
+  },
+
+  "constantes_fisicas": {
+    "calor_especifico_agua": {"valor": 4186, "unidade": "J/(kg·°C)", "tipo": "PUBLICO", "ref": null, "nota": "Valor de referência de física."},
+    "densidade_agua": {"valor": 1.0, "unidade": "kg/L", "tipo": "PUBLICO", "ref": null, "nota": ""}
+  },
+
+  "solar": {
+    "irradiacao_mensal_plano_23graus": {"valor": [4.8, 4.7, 4.9, 4.6, 4.4, 4.2, 4.7, 4.9, 4.4, 4.6, 5.0, 4.8], "unidade": "kWh/m²·dia (jan..dez)", "tipo": "PUBLICO", "ref": "R11",
+      "nota": "Irradiação diária média mensal no plano inclinado a 23° (São José dos Campos-SP, base CRESESB/SunData), usada como proxy da Grande SP (mesma latitude ~23°S). Para projeto real, consulte o SunData com a coordenada exata."},
+    "performance_ratio_fv": {"valor": 0.75, "unidade": "fração", "tipo": "ESTIMADO", "ref": "R12",
+      "nota": "Razão de desempenho de sistemas FV residenciais (literatura usa ~0,75–0,80)."},
+    "fracao_solar_aquecedor": {"valor": 0.70, "unidade": "fração", "tipo": "PUBLICO", "ref": "R13",
+      "nota": "Redução média de 70% na eletricidade para aquecer água ao trocar chuveiro elétrico por aquecedor solar com apoio elétrico (estudo UFV/Ambiente Construído). Sensibilidade: 0,50 a 0,80."}
+  },
+
+  "custos": {
+    "aquecedor_solar_kit_instalado": {"valor": 3359.57, "unidade": "R$", "tipo": "PUBLICO", "ref": "R14",
+      "nota": "SINAPI 103517 (09/2026, média nacional, não desonerado): kit compacto 200 L + coletor 2,0 m² + instalação. NÃO inclui conexões, válvulas e adaptações."},
+    "aquecedor_solar_adaptacoes": {"valor": 0.25, "unidade": "fração sobre o kit", "tipo": "ESTIMADO", "ref": "R15",
+      "nota": "Acréscimo para conexões, registros e ajustes hidráulicos. Casas sem tubulação de água quente podem custar muito mais (R15 cita R$ 10–18 mil em reformas extensas)."},
+    "aquecedor_solar_manutencao_anual": {"valor": 100, "unidade": "R$/ano", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Limpeza do coletor e verificação anual."},
+    "aquecedor_solar_vida_util": {"valor": 15, "unidade": "anos", "tipo": "ESTIMADO", "ref": null, "nota": ""},
+    "fv_custo_por_wp_pequeno": {"valor": 4.50, "unidade": "R$/Wp", "tipo": "ESTIMADO", "ref": "R16",
+      "nota": "Greener 2025: R$ 3,62/Wp para 2 kWp e R$ 2,84/Wp para 4 kWp. Sistemas de ~1 kWp têm custo fixo (inversor, projeto, homologação) diluído em menos watts, por isso R$ 4,50/Wp."},
+    "fv_potencia_modulo": {"valor": 0.55, "unidade": "kWp", "tipo": "MERCADO", "ref": null, "nota": "Módulo comercial típico (550 W)."},
+    "fv_manutencao_anual": {"valor": 100, "unidade": "R$/ano", "tipo": "ESTIMADO", "ref": null, "nota": "Limpeza e inspeção."},
+    "fv_vida_util": {"valor": 25, "unidade": "anos", "tipo": "ESTIMADO", "ref": null, "nota": "Inversor normalmente precisa ser trocado antes (~10–12 anos)."},
+    "fv_fio_b_enel_sp": {"valor": 0.15, "unidade": "R$/kWh", "tipo": "ESTIMADO", "ref": "R17",
+      "nota": "Fontes públicas divergem para a Enel SP (R$ 0,095 a 0,25/kWh). Usamos R$ 0,15 (ordem de grandeza da CPFL Paulista, também em SP) e testamos a faixa na sensibilidade."},
+    "fv_percentual_fio_b_2026": {"valor": 0.60, "unidade": "fração", "tipo": "PUBLICO", "ref": "R08",
+      "nota": "Lei 14.300/2022: em 2026, 60% do Fio B não é compensado (75% em 2027, 90% em 2028)."},
+    "habitos_custo_timer": {"valor": 20, "unidade": "R$", "tipo": "ESTIMADO", "ref": null, "nota": "Timer/ampulheta de banho (opcional)."},
+    "taxa_desconto_anual": {"valor": 0.10, "unidade": "fração/ano", "tipo": "ESTIMADO", "ref": null,
+      "nota": "Custo de oportunidade do dinheiro para o cálculo do VPL."}
+  },
+
+  "ambiental": {
+    "fator_emissao_sin": {"valor": 0.0385, "unidade": "tCO2/MWh", "tipo": "PUBLICO", "ref": "R18",
+      "nota": "Fator médio anual do SIN em 2023 (MCTI). Meses de 2025 ficaram entre 0,0215 e 0,0289 (R19). Usar o fator médio subestima o efeito de cortar consumo no horário de ponta, quando térmicas são acionadas."},
+    "participacao_chuveiro_ponta": {"valor": 0.49, "unidade": "fração", "tipo": "PUBLICO", "ref": "R20",
+      "nota": "Participação do chuveiro na ponta de carga residencial (estudo USP/PEA). Uso concentrado entre 18h e 19h."}
+  }
+}

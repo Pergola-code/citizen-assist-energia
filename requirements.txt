@@ -1,0 +1,2 @@
+matplotlib>=3.7   # só para gerar os gráficos (python -m citizen_energia.relatorio)
+pytest>=7         # testes automatizados

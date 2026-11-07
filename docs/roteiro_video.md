@@ -7,14 +7,14 @@ YouTube **não listado**. São ~390 palavras de fala, que dão ~2:50 num ritmo c
 - Terminal com fonte grande (18 pt ou mais) e janela limpa (`cls` no Windows, `clear` no Mac/Linux).
 - Deixe abertos, em abas: `README.md`, `docs/04_calculos_gerados.md` (seções 2 e 6), `docs/img/conta_anual.png`, `docs/img/retorno_acumulado.png` e o terminal na pasta do projeto.
 - Gravador: OBS Studio, Win+G (Windows) ou Cmd+Shift+5 (Mac). Microfone de fone de ouvido já resolve.
-- Se forem 3 pessoas: A fala as cenas 1 e 2, B as cenas 3 e 4, C as cenas 5 a 7.
+- Grave cena por cena e junte depois (ex.: Clipchamp). Errou? Refaz só aquela cena.
 
 ## Cenas
 
 ### 1 · Abertura (0:00–0:15)
 **Mostrar:** `README.md`, título e tabela de integrantes.
 **Falar:**
-> "Olá! Somos [nomes], da turma 1CC. Este vídeo apresenta a contribuição de Energias Renováveis ao Citizen Assist AI: um módulo que ajuda famílias de baixa renda a gastar menos com o chuveiro elétrico."
+> "Olá! Sou Felipe Macedo, da turma 1CC. Este vídeo apresenta a contribuição de Energias Renováveis ao Citizen Assist AI: um módulo que ajuda famílias de baixa renda a gastar menos com o chuveiro elétrico."
 
 ### 2 · Público e necessidade (0:15–0:40)
 **Mostrar:** `docs/01_contexto.md`, tabela da família de referência.
@@ -50,7 +50,7 @@ YouTube **não listado**. São ~390 palavras de fala, que dão ~2:50 num ritmo c
 ### 7 · Encerramento (2:50–3:00)
 **Mostrar:** pasta `testes_usuarios/` e depois o `README.md`.
 **Falar:**
-> "Testamos com [N] pessoas e ajustamos a linguagem. Código, dados e referências estão no GitHub. Obrigado!"
+> "Testei com [N] pessoas e ajustei a linguagem. Código, dados e referências estão no GitHub. Obrigado!"
 
 ## Antes de publicar
 

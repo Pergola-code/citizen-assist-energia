@@ -1,10 +1,8 @@
 GLOBAL SOLUTION 2026.2 - CITIZEN ASSIST AI
 Soluções em Energias Renováveis e Sustentáveis - Turma 1CC
 
-Integrantes:
-Nome completo: ______________________________  RM: ________
-Nome completo: ______________________________  RM: ________
-Nome completo: ______________________________  RM: ________
+Integrante:
+Nome completo: Felipe Macedo ____________________  RM: ________
 
 Repositório GitHub: https://github.com/____________/____________
 Vídeo (YouTube, não listado): https://youtu.be/____________

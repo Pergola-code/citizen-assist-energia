@@ -25,7 +25,8 @@
 5. **Sem financiamento:** famílias de baixa renda geralmente precisariam de crédito; juros aumentam o retorno.
 6. **CO₂ pelo fator médio do SIN:** subestima o efeito de reduzir consumo no horário de pico (quando térmicas operam) e ignora as emissões da fabricação dos equipamentos (sem análise de ciclo de vida).
 7. **Assistente baseado em palavras-chave:** perguntas muito fora do roteiro caem em "não entendi" e recebem o menu de opções.
-8. **Tarifa Social:** modelada apenas a gratuidade de 80 kWh; descontos para renda entre ½ e 1 salário mínimo por pessoa não foram modelados.
+8. **Testes com personas simuladas, não com pessoas reais:** a avaliação verificou se o assistente reconhece as perguntas e responde de forma direta e adequada, mas não mediu a compreensão nem a satisfação de usuários reais (ver `testes_usuarios/03_registro_testes.md`).
+9. **Tarifa Social:** modelada apenas a gratuidade de 80 kWh; descontos para renda entre ½ e 1 salário mínimo por pessoa não foram modelados.
 
 ## O que o assistente orienta para reduzir riscos
 

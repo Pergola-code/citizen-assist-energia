@@ -48,9 +48,9 @@ YouTube **não listado**. São ~390 palavras de fala, que dão ~2:50 num ritmo c
 > "Testamos as incertezas. Se a casa precisar de obra, o aquecedor leva quase 12 anos para se pagar. Por isso o assistente recomenda: hábito primeiro, aquecedor solar para quem tem casa própria e telhado, e fotovoltaico com ressalvas."
 
 ### 7 · Encerramento (2:50–3:00)
-**Mostrar:** pasta `testes_usuarios/` e depois o `README.md`.
+**Mostrar:** `testes_usuarios/03_registro_testes.md` (tabela "Resumo quantitativo") e depois o `README.md`.
 **Falar:**
-> "Testei com [N] pessoas e ajustei a linguagem. Código, dados e referências estão no GitHub. Obrigado!"
+> "Avaliei o assistente com 5 personas simuladas do público: as perguntas não entendidas caíram de 7 para zero, e fiz 10 ajustes. Código, dados e referências estão no GitHub. Obrigado!"
 
 ## Antes de publicar
 

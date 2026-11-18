@@ -6,6 +6,7 @@ O enunciado permite o uso criterioso de IA generativa, com a equipe responsável
 
 - Apoio na busca de fontes públicas (tarifas, legislação, custos de referência).
 - Apoio na escrita de código e documentação.
+- **Avaliação com personas simuladas:** a IA ajudou a criar 5 personas do público e a escrever perguntas no estilo delas. As perguntas foram executadas no assistente real; os resultados registrados são saídas reais do programa. As personas **não são pessoas reais** e não substituem testes com usuários (ver `testes_usuarios/03_registro_testes.md`).
 
 ## Como verificamos (checklist da equipe)
 

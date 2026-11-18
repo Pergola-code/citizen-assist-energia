@@ -385,6 +385,19 @@ def sensibilidade(perfil: Perfil | None = None) -> list[dict]:
     return saida
 
 
+def estimar_consumo_total(pessoas: int, minutos_por_banho: float) -> float:
+    """
+    Estima o consumo mensal da casa quando a pessoa não sabe o valor da conta:
+    "outros usos" da família de referência (escalados pelo nº de pessoas, com metade fixa
+    — geladeira não dobra com o dobro de gente) + chuveiro calculado para esta família.
+    """
+    ref = Perfil()
+    outros_ref = ref.consumo_total_mensal - energia_chuveiro_mes_kwh(ref, 30)
+    outros = outros_ref * (0.5 + 0.5 * pessoas / ref.pessoas)
+    chuveiro = energia_chuveiro_mes_kwh(replace(ref, pessoas=pessoas, minutos_por_banho=minutos_por_banho), 30)
+    return outros + chuveiro
+
+
 def resumo_perfil(perfil: Perfil | None = None) -> dict:
     """Números-chave da situação atual, usados pelo assistente."""
     perfil = perfil or Perfil()

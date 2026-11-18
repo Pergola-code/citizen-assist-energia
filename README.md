@@ -57,10 +57,14 @@ Justificativas completas (custos, viabilidade, impactos ambientais): [`docs/05_r
 | "Tenho direito à tarifa social?" | regra da Lei 15.235/2025 e como pedir |
 | "Qual o impacto no meio ambiente?" | CO₂ evitado, efeito no pico, impactos da fabricação |
 | "Qual a bandeira?" | bandeira do mês e quanto ela pesa no banho |
+| "Placa solar zera a conta?" | resposta direta (não zera) com a conta antes e depois |
+| "Moro de aluguel / em apartamento" | o que funciona sem telhado próprio |
+| "E se a tarifa aumentar?" | economia recalculada com tarifa +10% |
+| "O que é kWh / Fio B / homologação?" | glossário em linguagem simples |
 | "De onde vêm esses números?" / "isso é garantido?" | lista de fontes / limitações |
-| `simular` | cálculo personalizado com pessoas, minutos de banho, kWh da conta e Tarifa Social |
+| `simular` | cálculo personalizado com pessoas, minutos de banho, kWh da conta (ou "não sei"), Tarifa Social e tipo de moradia |
 
-**Toda resposta com número traz as fontes usadas e as limitações da estimativa.** As respostas são geradas a partir do motor de cálculo, então análise e orientação nunca divergem (há teste automatizado garantindo isso).
+**Toda resposta principal começa com um resumo de uma frase, e toda resposta com número traz as fontes usadas e as limitações da estimativa.** As respostas são geradas a partir do motor de cálculo, então análise e orientação nunca divergem (há teste automatizado garantindo isso).
 
 ## 4. Como executar
 
@@ -78,7 +82,7 @@ python -m citizen_energia "vale a pena aquecedor solar?"
 # Regerar memória de cálculo, CSVs e gráficos após mudar um parâmetro
 python -m citizen_energia.relatorio
 
-# Rodar os testes automatizados (49 testes)
+# Rodar os testes automatizados (74 testes)
 python -m pytest -q
 ```
 
@@ -117,7 +121,7 @@ docs/
   08_uso_de_ia.md          # como IA generativa foi usada e verificada
   roteiro_video.md         # roteiro do vídeo de 3 minutos
   img/                     # gráficos
-testes_usuarios/           # protocolo, roteiro, registro dos testes e ajustes
+testes_usuarios/           # protocolo, registro (personas simuladas), ajustes, transcrição
 tests/                     # testes automatizados (pytest)
 entrega.txt                # modelo do arquivo de entrega
 ```
@@ -126,4 +130,4 @@ entrega.txt                # modelo do arquivo de entrega
 
 - Referências: [`docs/06_referencias.md`](docs/06_referencias.md)
 - Limitações: [`docs/07_limitacoes.md`](docs/07_limitacoes.md)
-- Testes com usuários: [`testes_usuarios/`](testes_usuarios/)
+- Testes: [`testes_usuarios/`](testes_usuarios/). Avaliação com **5 personas simuladas** (trabalho individual; não são pessoas reais), executada no assistente real em duas rodadas. Perguntas não entendidas caíram de 7/18 para 0/18, e foram feitos 10 ajustes. Resultados em [`03_registro_testes.md`](testes_usuarios/03_registro_testes.md), ajustes em [`04_ajustes_realizados.md`](testes_usuarios/04_ajustes_realizados.md) e transcrição em [`05_transcricao_personas.md`](testes_usuarios/05_transcricao_personas.md).

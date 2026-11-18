@@ -1,5 +1,7 @@
 # Protocolo dos testes com usuários
 
+> **Situação atual:** a avaliação registrada em `03_registro_testes.md` foi feita com **personas simuladas** (trabalho individual, sem tempo para entrevistas). Este protocolo é o roteiro para a próxima etapa: testes com pessoas reais.
+
 **Objetivo:** verificar se as orientações de energia do assistente são **compreendidas** e **úteis** para o público, e ajustar o que não funcionar.
 
 ## Participantes

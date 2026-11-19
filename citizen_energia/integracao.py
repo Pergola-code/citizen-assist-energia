@@ -31,17 +31,22 @@ def e_assunto_de_energia(mensagem: str) -> bool:
     return any(p in m for p in PALAVRAS_ENERGIA)
 
 
-def responder_para_citizen_assist(mensagem: str, perfil: C.Perfil | None = None) -> dict:
-    r = responder(mensagem, perfil)
+def resposta_para_dict(r) -> dict:
+    """Converte uma Resposta em dicionário (formato usado pela interface web e pelo assistente principal)."""
     refs = C.carregar_referencias()
     return {
         "modulo": "energia",
         "intencao": r.intencao,
+        "resumo": r.resumo,
         "texto": r.texto,
         "limitacoes": r.limitacoes,
         "fontes": [{"id": f, "titulo": refs[f]["titulo"], "url": refs[f]["url"]} for f in r.fontes if f in refs],
         "texto_formatado": r.formatada(),
     }
+
+
+def responder_para_citizen_assist(mensagem: str, perfil: C.Perfil | None = None) -> dict:
+    return resposta_para_dict(responder(mensagem, perfil))
 
 
 def contexto_para_llm(perfil: C.Perfil | None = None) -> str:

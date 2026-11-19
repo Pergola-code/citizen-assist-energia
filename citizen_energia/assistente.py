@@ -263,13 +263,18 @@ def r_comparar(perfil):
         ren = " (renovável)" if l["renovavel"] else ""
         linhas.append(f"  - {l['alternativa']}{ren}: investe {reais(l['investimento'])}, "
                       f"economiza {reais(l['economia_anual'])}/ano, retorno {pb}, evita {num(l['co2_evitado_kg_ano'])} kg de CO2/ano.")
+        if chave == "fotovoltaico":
+            fvn = C.fv_normalizado(perfil)
+            linhas.append(f"    (2 placas geram mais do que o banho gasta. Só para o banho, a economia seria de "
+                          f"~{reais(fvn['economia_anual'])}/ano, com retorno de {num(fvn['payback_anos'], 1)} anos.)")
     texto = (
         "Comparação para a mesma necessidade (água quente do banho) em 12 meses:\n\n" + "\n".join(linhas) + "\n\n"
         "O que eu recomendo, em ordem:\n"
         "1. Comece JÁ pelos banhos mais curtos: custo zero e economia imediata.\n"
         "2. Se a casa é sua e tem telhado com sol, o aquecedor solar é a opção renovável mais segura: "
         "não depende de regra de compensação e alivia a rede no horário de pico.\n"
-        "3. As placas fotovoltaicas dão o maior retorno financeiro no cálculo, mas exigem mais dinheiro na entrada, "
+        f"3. As placas fotovoltaicas também se pagam rápido (~{num(C.fv_normalizado(perfil)['payback_anos'], 0)} anos, "
+        "comparando só a energia do banho), mas exigem mais dinheiro na entrada, "
         "autorização da Enel e dependem de uma taxa (Fio B) que vai subir até 2028. "
         "Considere se tiver acesso a crédito barato ou a um programa social."
     )

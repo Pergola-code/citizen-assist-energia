@@ -10,7 +10,7 @@ Tipos: **PUBLICO** = dado oficial/publicado; **MERCADO** = preço de referência
 
 | Parâmetro | Valor | Unidade | Tipo | Ref. | Nota |
 |---|---|---|---|---|---|
-| `tarifa_b1_sem_impostos` | 0.78938 | R$/kWh | PUBLICO | R01 | Enel SP, B1 residencial convencional (TUSD 0,47242 + TE 0,31696), REH ANEEL nº 3.596/2026, vigente 04/07/2026 a 03/07/2027, bandeira verde. |
+| `tarifa_b1_sem_impostos` | 0.78938 | R$/kWh | PUBLICO | R01 | Enel SP, B1 residencial convencional (TUSD 0,47242 + TE 0,31696), REH ANEEL nº 3.596/2026, vigente 04/07/2026 a 03/07/2027, bandeira verde. Conferido na resolução (R01) e na tabela da Enel (R21). |
 | `bandeira_amarela_adicional` | 0.01885 | R$/kWh | PUBLICO | R03 | R$ 1,885 a cada 100 kWh. Usado só na análise de sensibilidade. Nov/2026 = bandeira verde (R02). |
 | `icms_faixas_sp` | [[90, 0.0], [200, 0.12], [999999, 0.18]] | [limite kWh/mês, alíquota] | PUBLICO | R05 | SP residencial: isento até 90 kWh; 12% de 91 a 200 kWh; 18% acima de 200 kWh (teto da LC 194/2022). A faixa vale para a conta inteira. |
 | `pis_cofins_efetivo` | 0.06 | fração | ESTIMADO | R04 | PIS/COFINS variam mês a mês por distribuidora; 6% é a média usada em simulações públicas da tarifa Enel SP. Confira na sua conta. |
@@ -126,6 +126,18 @@ Energia do chuveiro retirada da rede (kWh) e geração fotovoltaica (kWh), por m
 | Aquecedor solar + banhos de 5 min | sim | 836 | R$ 847,38 | R$ 835,65 | R$ 4.219,46 | R$ 5,04 | 5,0 anos | R$ 915,23 | 32,2 | 3,7 |
 
 Definições: *economia líquida* = redução da conta − manutenção anual; *retorno simples* = investimento ÷ economia líquida; *VPL* = −investimento + Σ economia/(1,10)^t, t = 1..10 (horizonte comum de 10 anos, sem valor residual, sem reajuste de tarifa — conservador); *CO2* = kWh evitados × fator médio do SIN; *alívio no pico* = potência do chuveiro × fração solar (o FV não gera às 18h–21h).
+
+### 5.1 Comparação normalizada do fotovoltaico
+
+O menor sistema real (2 módulos, 1,1 kWp) gera 137% da energia do banho, então parte da economia da tabela acima vem de abater OUTROS usos da casa. Para comparar a mesma necessidade, simulamos um sistema hipotético do tamanho exato do banho (0,81 kWp, 100% da energia do banho):
+
+| Fotovoltaico | kWp | Investimento | Economia líquida/ano | Retorno |
+|---|---|---|---|---|
+| Sistema real (2 módulos) | 1,10 | R$ 4.950,00 | R$ 1.193,44 | 4,1 anos |
+| **Normalizado (só o banho)** | 0,81 | R$ 3.625,77 | **R$ 847,42** | **4,3 anos** |
+| Aquecedor solar (referência) | — | R$ 4.199,46 | R$ 724,23 | 5,8 anos |
+
+Conclusão: atendendo exatamente a mesma necessidade, o fotovoltaico ainda se paga um pouco mais rápido que o aquecedor solar no cenário base, mas a diferença de economia anual cai de R$ 469,21 para R$ 123,19. Essa vantagem depende de regras de compensação que pioram até 2028 e não inclui alívio do pico noturno.
 
 ## 6. Análise de sensibilidade
 

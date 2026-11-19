@@ -99,3 +99,12 @@ def test_todo_parametro_tem_tipo_e_unidade():
             assert item["tipo"] in {"PUBLICO", "MERCADO", "ESTIMADO"}, nome
             assert item["unidade"], nome
             assert item["ref"] is None or item["ref"] in refs, nome
+
+
+def test_fv_normalizado_cobre_exatamente_o_banho():
+    n = C.fv_normalizado()
+    assert n["fracao_do_banho"] == pytest.approx(1.0, abs=0.01)
+    t = {l["chave"]: l for l in C.comparar()}
+    # Sem o excedente, a economia do FV cai, mas o investimento também.
+    assert n["economia_anual"] < t["fotovoltaico"]["economia_anual"]
+    assert n["investimento"] < t["fotovoltaico"]["investimento"]

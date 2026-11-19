@@ -10,9 +10,10 @@ Valores do cenário base (família de referência, 12 meses). Faixas vêm da [an
 | **Economia líquida/ano** | R$ 502 | R$ 724 (R$ 526–823) | R$ 1.193 (R$ 1.082–1.254) |
 | **Retorno** | imediato | 5,8 anos (5,1–11,6) | 4,1 anos (3,3–6,0) |
 | **Investimento por kWh evitado/ano** | R$ 0,05 | R$ 5,83 | R$ 3,52 |
+| **Comparação justa (FV do tamanho exato do banho)** | — | — | R$ 3.626 · R$ 847/ano · 4,3 anos |
 | **Renovável** | não (eficiência) | sim — solar térmica | sim — solar fotovoltaica |
 | **CO₂ evitado/ano** | 15 kg | 28 kg | 54 kg |
-| **Alívio no pico 18h–21h** | não muda a potência | ~3,7 kW por casa | nenhum (não gera à noite) |
+| **Alívio no pico 18h–21h** | não muda a potência | ~3,7 kW por casa, em média (menos em dia nublado) | nenhum (não gera à noite) |
 | **Exige casa própria / telhado** | não | sim | sim |
 | **Burocracia** | nenhuma | nenhuma (só instalação) | projeto + homologação na Enel |
 | **Depende de regra regulatória** | não | não | sim (Fio B: 60% → 90% até 2028) |
@@ -37,6 +38,7 @@ Valores do cenário base (família de referência, 12 meses). Faixas vêm da [an
 - **Custo:** maior desembolso inicial; sistemas muito pequenos custam mais por watt.
 - **Viabilidade:** telhado próprio, projeto elétrico, instalador habilitado e homologação na Enel. A energia do banho (noturna) depende 100% de créditos na rede.
 - **Regras:** Lei 14.300/2022 — 60% do Fio B não compensado em 2026, 75% em 2027, 90% em 2028; após 2029 a regra ainda é incerta. No cenário de 90%, o retorno passa de 4,1 para 4,5 anos.
+- **Comparação justa:** como o menor sistema real gera 137% da energia do banho, também simulamos um sistema hipotético do tamanho exato do banho (0,81 kWp): R$ 3.626, R$ 847/ano, retorno de 4,3 anos. A vantagem anual sobre o aquecedor solar cai de R$ 469 para R$ 123.
 - **Ambiental:** maior CO₂ evitado (gera mais kWh porque o menor sistema viável, 2 módulos, produz 137% da energia do banho). Não alivia o pico noturno. Módulos e inversores exigem descarte adequado ao fim da vida útil.
 - **Alternativa para quem não tem telhado:** geração compartilhada ("energia por assinatura") — citada pelo assistente, mas não calculada.
 

@@ -4,7 +4,7 @@
 
   "tarifa": {
     "tarifa_b1_sem_impostos": {"valor": 0.78938, "unidade": "R$/kWh", "tipo": "PUBLICO", "ref": "R01",
-      "nota": "Enel SP, B1 residencial convencional (TUSD 0,47242 + TE 0,31696), REH ANEEL nº 3.596/2026, vigente 04/07/2026 a 03/07/2027, bandeira verde."},
+      "nota": "Enel SP, B1 residencial convencional (TUSD 0,47242 + TE 0,31696), REH ANEEL nº 3.596/2026, vigente 04/07/2026 a 03/07/2027, bandeira verde. Conferido na resolução (R01) e na tabela da Enel (R21)."},
     "bandeira_amarela_adicional": {"valor": 0.01885, "unidade": "R$/kWh", "tipo": "PUBLICO", "ref": "R03",
       "nota": "R$ 1,885 a cada 100 kWh. Usado só na análise de sensibilidade. Nov/2026 = bandeira verde (R02)."},
     "icms_faixas_sp": {"valor": [[90, 0.00], [200, 0.12], [999999, 0.18]], "unidade": "[limite kWh/mês, alíquota]", "tipo": "PUBLICO", "ref": "R05",

@@ -170,6 +170,29 @@ def gerar_markdown() -> str:
               "sem valor residual, sem reajuste de tarifa — conservador); *CO2* = kWh evitados × fator médio do SIN; "
               "*alívio no pico* = potência do chuveiro × fração solar (o FV não gera às 18h–21h).\n")
 
+    fvn = C.fv_normalizado(perfil)
+    fvr = {l["chave"]: l for l in tab}
+    md.append("### 5.1 Comparação normalizada do fotovoltaico\n")
+    md.append(
+        f"O menor sistema real (2 módulos, {num(fvr['fotovoltaico']['kwp'], 1)} kWp) gera "
+        f"{sum(sims['fotovoltaico'].geracao_fv_kwh) / sims['atual'].energia_anual_rede:.0%} da energia do banho, então "
+        "parte da economia da tabela acima vem de abater OUTROS usos da casa. Para comparar a mesma necessidade, "
+        f"simulamos um sistema hipotético do tamanho exato do banho ({num(fvn['kwp'], 2)} kWp, "
+        f"{fvn['fracao_do_banho']:.0%} da energia do banho):\n")
+    md.append(_md_tabela(["Fotovoltaico", "kWp", "Investimento", "Economia líquida/ano", "Retorno"], [
+        ["Sistema real (2 módulos)", num(fvr["fotovoltaico"]["kwp"], 2), reais(fvr["fotovoltaico"]["investimento"]),
+         reais(fvr["fotovoltaico"]["economia_anual"]), f"{num(fvr['fotovoltaico']['payback_anos'], 1)} anos"],
+        ["**Normalizado (só o banho)**", num(fvn["kwp"], 2), reais(fvn["investimento"]),
+         f"**{reais(fvn['economia_anual'])}**", f"**{num(fvn['payback_anos'], 1)} anos**"],
+        ["Aquecedor solar (referência)", "—", reais(fvr["aquecedor_solar"]["investimento"]),
+         reais(fvr["aquecedor_solar"]["economia_anual"]), f"{num(fvr['aquecedor_solar']['payback_anos'], 1)} anos"],
+    ]) + "\n")
+    md.append("Conclusão: atendendo exatamente a mesma necessidade, o fotovoltaico ainda se paga um pouco mais rápido que "
+              "o aquecedor solar no cenário base, mas a diferença de economia anual cai de "
+              f"{reais(fvr['fotovoltaico']['economia_anual'] - fvr['aquecedor_solar']['economia_anual'])} para "
+              f"{reais(fvn['economia_anual'] - fvr['aquecedor_solar']['economia_anual'])}. Essa vantagem depende de regras "
+              "de compensação que pioram até 2028 e não inclui alívio do pico noturno.\n")
+
     md.append("## 6. Análise de sensibilidade\n")
     md.append("Cada linha muda UMA premissa incerta e recalcula tudo. Serve para mostrar que os resultados são "
               "estimativas com faixa de variação, não números garantidos.\n")

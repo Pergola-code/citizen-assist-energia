@@ -26,7 +26,7 @@ Atenção:
   - Confira a potência real na etiqueta do seu chuveiro.
 
 De onde vêm esses números:
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027)
   [R05] ICMS sobre energia em SP: isenção até 90 kWh (Decreto 50.473/2006; RICMS Anexo I art. 29) e faixas 12%/18%
   [R09] Pesquisa de Posse e Hábitos (PPH) Eletrobras/Procel – chuveiro ~24% do consumo residencial no Sudeste
   [R10] Impacto das mudanças climáticas no consumo de chuveiros elétricos (banho diário de 8 min)
@@ -125,7 +125,7 @@ Atenção:
   - Confira a potência real na etiqueta do seu chuveiro.
 
 De onde vêm esses números:
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027)
   [R05] ICMS sobre energia em SP: isenção até 90 kWh (Decreto 50.473/2006; RICMS Anexo I art. 29) e faixas 12%/18%
   [R09] Pesquisa de Posse e Hábitos (PPH) Eletrobras/Procel – chuveiro ~24% do consumo residencial no Sudeste
   [R10] Impacto das mudanças climáticas no consumo de chuveiros elétricos (banho diário de 8 min)
@@ -265,12 +265,13 @@ Comparação para a mesma necessidade (água quente do banho) em 12 meses:
   - Banhos de 5 min (mudança de hábito): investe R$ 20,00, economiza R$ 502,05/ano, retorno imediato, evita 15 kg de CO2/ano.
   - Aquecedor solar de água + chuveiro de apoio (renovável): investe R$ 4.199,46, economiza R$ 724,23/ano, retorno 5,8 anos, evita 28 kg de CO2/ano.
   - Placas solares fotovoltaicas (renovável): investe R$ 4.950,00, economiza R$ 1.193,44/ano, retorno 4,1 anos, evita 54 kg de CO2/ano.
+    (2 placas geram mais do que o banho gasta. Só para o banho, a economia seria de ~R$ 847,42/ano, com retorno de 4,3 anos.)
   - Aquecedor solar + banhos de 5 min (renovável): investe R$ 4.219,46, economiza R$ 835,65/ano, retorno 5,0 anos, evita 32 kg de CO2/ano.
 
 O que eu recomendo, em ordem:
 1. Comece JÁ pelos banhos mais curtos: custo zero e economia imediata.
 2. Se a casa é sua e tem telhado com sol, o aquecedor solar é a opção renovável mais segura: não depende de regra de compensação e alivia a rede no horário de pico.
-3. As placas fotovoltaicas dão o maior retorno financeiro no cálculo, mas exigem mais dinheiro na entrada, autorização da Enel e dependem de uma taxa (Fio B) que vai subir até 2028. Considere se tiver acesso a crédito barato ou a um programa social.
+3. As placas fotovoltaicas também se pagam rápido (~4 anos, comparando só a energia do banho), mas exigem mais dinheiro na entrada, autorização da Enel e dependem de uma taxa (Fio B) que vai subir até 2028. Considere se tiver acesso a crédito barato ou a um programa social.
 
 Atenção:
   - Os números são para a família de referência (4 pessoas, 8 min de banho, 220 kWh/mês, com Tarifa Social).
@@ -278,7 +279,7 @@ Atenção:
   - Use o simulador para colocar os dados da SUA conta (digite: simular).
 
 De onde vêm esses números:
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027)
   [R06] Lei 15.235/2025 – Tarifa Social: gratuidade até 80 kWh/mês (Luz do Povo)
   [R08] Consumidores passarão a arcar com 60% do Fio B a partir de 2026 (Lei 14.300/2022)
   [R13] Altoé, Oliveira Filho e Carlo (2012). Análise energética de sistemas solares térmicos... Ambiente Construído 12(3), 75-87
@@ -398,7 +399,7 @@ O que você precisa saber sobre estes números:
   - Não calculamos financiamento nem juros de empréstimo. O efeito de um aumento da tarifa você vê perguntando "e se a tarifa aumentar?".
 
 De onde vêm esses números:
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027)
   [R11] Irradiação solar diária média mensal – São José dos Campos, plano horizontal e 23° (base CRESESB/SunData)
   [R13] Altoé, Oliveira Filho e Carlo (2012). Análise energética de sistemas solares térmicos... Ambiente Construído 12(3), 75-87
   [R14] SINAPI 103517 – Aquecedor solar compacto 200 L, fornecimento e instalação (ref. 09/2026)
@@ -415,8 +416,8 @@ Intenção antes dos ajustes: `fontes` → depois: `fontes`
 
 Todas as fontes usadas nos cálculos:
 
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026 (ANEEL (dados compilados por Calculadora do Mundo)) — https://www.calculadoradomundo.com.br/energia/tarifa-energia-por-distribuidora/enel-sp
-  [R02] Tarifa de energia continua sem adicional de bandeira em novembro de 2026 (Economic News Brasil) — https://economicnewsbrasil.com.br/2026/10/31/tarifa-de-energia-eletrica-novembro-bandeira-verde/
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027) (ANEEL (documento publicado pela Enel)) — https://www.enel.com.br/content/dam/enel-br/megamenu/para-voc%C3%AA/REH%203596.2026%20Enel%20SP.pdf
+  [R02] Bandeira tarifária permanece verde em novembro de 2026 (30/10/2026) (Agência iNFRA) — https://agenciainfra.com/blog/?p=49598
   [R03] Aneel aciona bandeira verde em outubro; amarela vigorou de maio a setembro de 2026 (R$ 1,885/100 kWh) (Jornal do Brasil) — https://www.jb.com.br/editorias/?p=382
   [R04] Simulação de tarifa Enel SP com ICMS e PIS/COFINS por dentro (Calculadora do Mundo) — https://www.calculadoradomundo.com.br/energia/tarifa-energia-por-distribuidora/enel-sp
   [R05] ICMS sobre energia em SP: isenção até 90 kWh (Decreto 50.473/2006; RICMS Anexo I art. 29) e faixas 12%/18% (SEFAZ-SP / Esfera Energia) — https://legislacao.fazenda.sp.gov.br/Paginas/an1art029.aspx
@@ -435,6 +436,7 @@ Todas as fontes usadas nos cálculos:
   [R18] SIN registra 38,5 kg CO2/MWh em 2023, menor taxa desde 2012 (MCTI) (MCTI via O Setor Elétrico) — https://www.osetoreletrico.com.br/?p=159478
   [R19] Fatores de emissão do SIN jan–abr/2025 (21,5 a 28,9 kg CO2/MWh) (MCTI via Canal Solar) — https://canalsolar.com.br/emissoes-de-co%e2%82%82-geracao-eletrica-mcti/
   [R20] Chuveiro elétrico: 49% da ponta residencial; uso concentrado das 18h às 19h (USP – Boletim Técnico PEA) — https://repositorio.usp.br/directbitstream/38e53bbb-af84-461c-875f-e775bb055343/BT-PEA-96_08_251016_082227.pdf
+  [R21] Tarifa de energia elétrica – Enel São Paulo (tabela B1 residencial, REH 3.596/2026) (Enel Distribuição São Paulo) — https://www.enel.com.br/pt-saopaulo/Para_Voce/tarifa-de-energia-eletrica.html
 ```
 
 ### "quanto co2 eu economizo"
@@ -483,6 +485,6 @@ Atenção:
   - Ninguém sabe quanto será o próximo reajuste; 10% é só um exemplo, parecido com o de 2026.
 
 De onde vêm esses números:
-  [R01] Tarifa Enel SP 2026 (TUSD + TE) – REH ANEEL nº 3.596/2026
+  [R01] Resolução Homologatória ANEEL nº 3.596/2026 – tarifas Enel SP (B1 residencial: TUSD 472,42 + TE 316,96 R$/MWh; vigência 04/07/2026 a 03/07/2027)
   (Para ver os links, digite: fontes)
 ```

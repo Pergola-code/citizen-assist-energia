@@ -198,13 +198,16 @@ def _irradiacao_media() -> float:
     return sum(P["irradiacao_mensal_plano_23graus"]) / 12
 
 
-def dimensionar_fv_kwp(energia_anual_kwh: float) -> float:
+def dimensionar_fv_kwp(energia_anual_kwh: float, exato: bool = False) -> float:
     """
     kWp necessários = energia anual / (irradiação média x 365 x PR).
     Arredondamos para cima em número inteiro de módulos (não existe meio módulo).
     """
     producao_por_kwp = _irradiacao_media() * 365 * P["performance_ratio_fv"]
     kwp_teorico = energia_anual_kwh / producao_por_kwp
+    if exato:
+        # Comparação normalizada: sistema hipotético do tamanho EXATO do banho (sem arredondar módulos).
+        return kwp_teorico
     modulos = max(1, math.ceil(kwp_teorico / P["fv_potencia_modulo"]))
     return round(modulos * P["fv_potencia_modulo"], 3)
 
@@ -212,7 +215,8 @@ def dimensionar_fv_kwp(energia_anual_kwh: float) -> float:
 def simular(chave: str, perfil: Perfil | None = None, *, minutos_habito: float = 5,
             fracao_solar: float | None = None, custo_aquecedor_mult: float = 1.0,
             fio_b: float | None = None, bandeira_adicional: float = 0.0,
-            custo_wp: float | None = None, pct_fio_b: float | None = None) -> ResultadoAlternativa:
+            custo_wp: float | None = None, pct_fio_b: float | None = None,
+            fv_exato: bool = False) -> ResultadoAlternativa:
     """Simula 12 meses de uma alternativa. Os argumentos extras servem à sensibilidade."""
     perfil = perfil or Perfil()
     perfil.validar()
@@ -251,7 +255,7 @@ def simular(chave: str, perfil: Perfil | None = None, *, minutos_habito: float =
     kwp = 0.0
     if usa_fv:
         energia_alvo = sum(energia_chuveiro_mes_kwh(perfil, d) for d in DIAS_NO_MES)
-        kwp = dimensionar_fv_kwp(energia_alvo)
+        kwp = dimensionar_fv_kwp(energia_alvo, exato=fv_exato)
         investimento += kwp * 1000 * custo_wp
         manutencao += P["fv_manutencao_anual"]
         vida = P["fv_vida_util"]
@@ -291,6 +295,26 @@ def simular(chave: str, perfil: Perfil | None = None, *, minutos_habito: float =
 def vpl(fluxo_anual: float, investimento: float, anos: int, taxa: float) -> float:
     """Valor Presente Líquido: quanto o investimento 'vale hoje' somando economias futuras descontadas."""
     return -investimento + sum(fluxo_anual / (1 + taxa) ** t for t in range(1, anos + 1))
+
+
+def fv_normalizado(perfil: Perfil | None = None) -> dict:
+    """
+    Fotovoltaico dimensionado para gerar EXATAMENTE a energia do banho (100%, não 137%).
+    Responde à pergunta justa: "para a mesma necessidade, quanto o FV economiza?".
+    Sistema hipotético (não existe fração de módulo), usado só para comparar.
+    """
+    perfil = perfil or Perfil()
+    base = simular("atual", perfil)
+    r = simular("fotovoltaico", perfil, fv_exato=True)
+    economia = base.custo_contas_anual - r.custo_contas_anual - r.manutencao_anual
+    return {
+        "kwp": r.detalhes["kwp"],
+        "geracao_ano": sum(r.geracao_fv_kwh),
+        "investimento": r.investimento,
+        "economia_anual": economia,
+        "payback_anos": r.investimento / economia if economia > 0 else math.inf,
+        "fracao_do_banho": sum(r.geracao_fv_kwh) / base.energia_anual_rede,
+    }
 
 
 def comparar(perfil: Perfil | None = None, **kwargs) -> list[dict]:

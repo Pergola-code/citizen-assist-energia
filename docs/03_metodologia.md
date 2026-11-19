@@ -52,6 +52,10 @@ São duas formas diferentes de usar a mesma fonte renovável:
 
 Conferência física do aquecedor: coletor de 2 m² × 4,63 kWh/m²·dia × ~40% ≈ **3,7 kWh/dia de calor**, acima dos **2,68 kWh/dia** que o banho precisa na média. Por isso uma fração solar de 70% é plausível (não chega a 100% por causa de dias nublados, inverno e perdas noturnas do reservatório).
 
+### Comparação justa do fotovoltaico
+
+Módulos só existem em tamanhos inteiros (550 W), e o menor sistema que cobre o banho (2 módulos) gera 137% da energia necessária. Para comparar a **mesma necessidade**, também simulamos um sistema hipotético do tamanho exato do banho (`calculos.fv_normalizado`). Os dois resultados são apresentados.
+
 ## 3.4 Indicadores
 
 | Indicador | Fórmula | Para que serve |

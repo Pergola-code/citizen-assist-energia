@@ -1,58 +1,36 @@
-# Roteiro do vídeo técnico (máx. 3 minutos)
+# Roteiro do vídeo técnico (2:50)
 
-YouTube **não listado**. São ~390 palavras de fala, que dão ~2:50 num ritmo calmo. Ensaie uma vez com cronômetro.
+O vídeo `video_citizen_energia_RM570990.mp4` já está montado, com legendas, e pode ser publicado assim. **Recomendado:** gravar a narração por cima lendo as falas abaixo, que estão sincronizadas com o vídeo. Isso mostra que o autor entende a solução, o que o enunciado exige.
 
-## Antes de gravar
+**Como gravar a narração (10–15 min):** abra o vídeo no Clipchamp (Windows) ou no CapCut, use "Gravar voz" ou "Narração", dê play e leia cada fala quando o tempo indicado aparecer. Fale devagar; se adiantar, faça uma pausa. Publique no YouTube como **Não listado**.
 
-- Terminal com fonte grande (18 pt ou mais) e janela limpa (`cls` no Windows, `clear` no Mac/Linux).
-- Deixe abertos, em abas: `README.md`, `docs/04_calculos_gerados.md` (seções 2 e 6), `docs/img/conta_anual.png`, `docs/img/retorno_acumulado.png` e o terminal na pasta do projeto.
-- Gravador: OBS Studio, Win+G (Windows) ou Cmd+Shift+5 (Mac). Microfone de fone de ouvido já resolve.
-- Grave cena por cena e junte depois (ex.: Clipchamp). Errou? Refaz só aquela cena.
+| Tempo | Na tela | Fala |
+|---|---|---|
+| 0:00 | Título | "Olá! Sou Felipe Macedo, RM 570990, turma 1CCPJ. Esta é a contribuição de Energias Renováveis ao Citizen Assist AI." |
+| 0:06 | Público e necessidade | "Meu público são famílias de baixa renda da Grande São Paulo, atendidas pela Enel. Mesmo com Tarifa Social, todo kWh acima de 80 por mês é cobrado." |
+| 0:13 | (mesmo slide) | "A necessidade escolhida é a água quente do banho: o chuveiro elétrico é o maior vilão da conta." |
+| 0:20 | Análise de consumo | "Calculei a potência pela física: vazão, vezes calor específico da água, vezes o aumento de temperatura, dividido pela eficiência." |
+| 0:29 | (mesmo slide) | "Dá 5,3 quilowatts e cerca de 85 kWh por mês: 38% da conta de uma família de quatro pessoas, uns nove centavos por minuto de banho." |
+| 0:38 | Tabela de comparação | "Comparei três alternativas para a mesma necessidade, nos mesmos 12 meses. Duas usam energia solar, que é renovável." |
+| 0:44 | (tabela) | "Banho de 5 minutos: custo quase zero e uns 500 reais por ano. Parte vem do ICMS, que cai de 18 para 12% abaixo de 200 kWh." |
+| 0:51 | (tabela) | "O aquecedor solar se paga em uns 6 anos e é o único que alivia a rede no horário de pico." |
+| 0:58 | (tabela, linha destacada) | "Duas placas fotovoltaicas geram mais que o banho gasta. Para comparar de forma justa, simulei o sistema do tamanho exato do banho: 847 reais por ano." |
+| 1:06 | Gráfico da conta anual | "As placas se pagam em uns 4 anos, mas exigem mais dinheiro na entrada, autorização da Enel, e a taxa do Fio B sobe até 2028." |
+| 1:12 | Gráfico de retorno | "Neste gráfico, onde cada linha cruza o zero, a opção se pagou." |
+| 1:18 | Interface web | "Agora o assistente funcionando no navegador. Ele também funciona no celular." |
+| 1:23 | Pergunta do chuveiro | "A pessoa toca numa pergunta pronta ou escreve do seu jeito. Toda resposta começa com um resumo direto." |
+| 1:29 | (mesma tela) | "Os números vêm do mesmo código da análise, e um teste automatizado garante isso." |
+| 1:35 | "Placa solar zera a conta?" | "Uma promessa comum de vendedor: placa solar zera a conta? A resposta é direta: não zera." |
+| 1:41 | (mesma tela) | "O assistente mostra a conta antes e depois e explica o que continua sendo cobrado." |
+| 1:47 | Digitando a pergunta | "Ele entende perguntas escritas do jeito do público, sem acento." |
+| 1:51 | Resposta da Tarifa Social | "Aqui, a regra da Tarifa Social explicada em linguagem simples." |
+| 1:57 | Formulário de simulação | "Em 'Simular minha casa', a pessoa informa os dados da família. Se não souber o consumo, o assistente estima." |
+| 2:03 | Resultado da simulação | "O resultado mostra quanto o banho custa e o que cada opção faria por aquela casa." |
+| 2:09 | (mesma tela) | "Os avisos de que são estimativas e as fontes aparecem em todas as respostas." |
+| 2:14 | Sensibilidade | "Testei como o resultado muda quando as premissas mudam. Nada é tratado como garantido." |
+| 2:21 | (mesmo slide) | "Por exemplo: se a casa precisar de obra, o aquecedor solar leva quase 12 anos para se pagar." |
+| 2:28 | Recomendação | "Por isso o assistente recomenda: hábito primeiro, aquecedor solar para quem tem casa própria e telhado, e fotovoltaico com ressalvas." |
+| 2:37 | Testes e ajustes | "Avaliei o assistente com cinco personas simuladas do público. As perguntas não entendidas caíram de sete para zero, com dez ajustes." |
+| 2:46 | Encerramento | "Código, dados e referências estão no GitHub. Obrigado!" |
 
-## Cenas
-
-### 1 · Abertura (0:00–0:15)
-**Mostrar:** `README.md`, título e tabela de integrantes.
-**Falar:**
-> "Olá! Sou Felipe Macedo, da turma 1CCPJ. Este vídeo apresenta a contribuição de Energias Renováveis ao Citizen Assist AI: um módulo que ajuda famílias de baixa renda a gastar menos com o chuveiro elétrico."
-
-### 2 · Público e necessidade (0:15–0:40)
-**Mostrar:** `docs/01_contexto.md`, tabela da família de referência.
-**Falar:**
-> "Nosso público são famílias da Grande São Paulo atendidas pela Enel, muitas com Tarifa Social. Desde 2025 elas não pagam os primeiros 80 kWh do mês, mas tudo acima disso é cobrado cheio. E o maior vilão da conta é o chuveiro elétrico, que ainda pesa no horário de pico, entre 18 e 21 horas."
-
-### 3 · Análise de consumo (0:40–1:05)
-**Mostrar:** `docs/04_calculos_gerados.md`, seção 2 (fórmula P = ṁ·c·ΔT/η).
-**Falar:**
-> "Calculamos o consumo pela física. O chuveiro aquece a água enquanto ela passa: a potência é a vazão, vezes o calor específico da água, vezes o aumento de temperatura, dividido pela eficiência. Com 4 litros por minuto e 18 graus de aquecimento, dá 5,3 quilowatts. Numa família de 4 pessoas, com banhos de 8 minutos, são 85 kWh por mês: 38% da conta."
-
-### 4 · Comparação das alternativas (1:05–1:40)
-**Mostrar:** `conta_anual.png` e, na segunda metade da fala, `retorno_acumulado.png`.
-**Falar:**
-> "Comparamos três alternativas para essa mesma necessidade, no mesmo período de 12 meses. Primeira: banho de 5 minutos. Custa quase nada e economiza uns 500 reais por ano, em parte porque a conta cai abaixo de 200 kWh e o ICMS cai de 18 para 12%. Segunda: aquecedor solar de água, uma fonte renovável. Custa cerca de 4.200 reais, se paga em uns 6 anos e tira 3,7 quilowatts do horário de pico. Terceira: placas fotovoltaicas, também renováveis. Se pagam em uns 4 anos, mas exigem mais dinheiro na entrada e homologação, e a cobrança do Fio B sobe até 2028."
-
-### 5 · Demonstração do assistente (1:40–2:30)
-**Mostrar:** terminal.
-**Fazer:**
-1. `python -m citizen_energia`
-2. Digitar: `quanto meu chuveiro gasta?`
-3. Digitar: `vale a pena aquecedor solar?` e rolar até "Atenção" e "De onde vêm esses números".
-4. Digitar: `simular` e responder 3, 10, 180, n.
-
-**Falar** (enquanto faz):
-> "Agora o assistente funcionando. Pergunto quanto o chuveiro gasta, e ele responde em linguagem simples, até com o custo de cada minuto de banho. Pergunto se vale a pena aquecedor solar. Repare que toda resposta traz as fontes e avisa que os números são estimativas. Com 'simular', o cidadão usa os dados da própria conta de luz. Os números das respostas saem do mesmo código da análise, e um teste automatizado garante isso."
-
-### 6 · Limitações e recomendação (2:30–2:50)
-**Mostrar:** `docs/04_calculos_gerados.md`, seção 6 (tabela de sensibilidade).
-**Falar:**
-> "Testamos as incertezas. Se a casa precisar de obra, o aquecedor leva quase 12 anos para se pagar. Por isso o assistente recomenda: hábito primeiro, aquecedor solar para quem tem casa própria e telhado, e fotovoltaico com ressalvas."
-
-### 7 · Encerramento (2:50–3:00)
-**Mostrar:** `testes_usuarios/03_registro_testes.md` (tabela "Resumo quantitativo") e depois o `README.md`.
-**Falar:**
-> "Avaliei o assistente com 5 personas simuladas do público: as perguntas não entendidas caíram de 7 para zero, e fiz 10 ajustes. Código, dados e referências estão no GitHub. Obrigado!"
-
-## Antes de publicar
-
-- Duração de no máximo 3:00 e áudio claro.
-- Visibilidade **não listado**; abra o link numa aba anônima para conferir que funciona.
+Checklist antes de publicar: duração abaixo de 3:00 · áudio audível · visibilidade **Não listado** · link testado numa aba anônima.

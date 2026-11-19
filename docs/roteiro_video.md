@@ -14,7 +14,7 @@ YouTube **não listado**. São ~390 palavras de fala, que dão ~2:50 num ritmo c
 ### 1 · Abertura (0:00–0:15)
 **Mostrar:** `README.md`, título e tabela de integrantes.
 **Falar:**
-> "Olá! Sou Felipe Macedo, da turma 1CC. Este vídeo apresenta a contribuição de Energias Renováveis ao Citizen Assist AI: um módulo que ajuda famílias de baixa renda a gastar menos com o chuveiro elétrico."
+> "Olá! Sou Felipe Macedo, da turma 1CCPJ. Este vídeo apresenta a contribuição de Energias Renováveis ao Citizen Assist AI: um módulo que ajuda famílias de baixa renda a gastar menos com o chuveiro elétrico."
 
 ### 2 · Público e necessidade (0:15–0:40)
 **Mostrar:** `docs/01_contexto.md`, tabela da família de referência.

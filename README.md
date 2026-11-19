@@ -1,14 +1,14 @@
 # Citizen Assist AI — Módulo de Energia e Sustentabilidade
 
-**Global Solution 2026.2 · Ciência da Computação (1CC) · Contribuição da disciplina _Soluções em Energias Renováveis e Sustentáveis_**
+**Global Solution 2026.2 · Ciência da Computação · Turma 1CCPJ · Contribuição da disciplina _Soluções em Energias Renováveis e Sustentáveis_**
 
 > Este repositório (ou esta pasta, se o repositório for compartilhado com outras disciplinas) contém **apenas a contribuição de Energia** ao Citizen Assist AI.
 
 ## Integrantes
 
-| Nome completo | RM |
+| Integrante (trabalho individual) | RM |
 |---|---|
-| Felipe Macedo _(completar nome completo)_ | _preencher_ |
+| Felipe Macedo | RM570990 |
 
 ---
 
